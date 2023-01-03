@@ -8,36 +8,37 @@ $router = new \App\Service\Router();
 
 $action = $_REQUEST['action'] ?? null;
 switch ($action) {
-    case 'movie-index':
+    case 'donde-index':
     case null:
-        $controller = new \App\Controller\MovieController();
+        $controller = new \App\Controller\SystemController();
         $view = $controller->indexAction($templating, $router);
         break;
-    case 'movie-create':
-        $controller = new \App\Controller\MovieController();
-        $view = $controller->createAction($_REQUEST['movie'] ?? null, $templating, $router);
+    case 'donde-plan':
+        $controller = new \App\Controller\SystemController();
+        $view = $controller->showAction($templating, $router);
         break;
-    case 'movie-edit':
-        if (! $_REQUEST['id']) {
+    case 'donde-szukaj':
+        if (! ($_REQUEST['room'] || $_REQUEST['worker'])) {
             break;
         }
-        $controller = new \App\Controller\MovieController();
-        $view = $controller->editAction($_REQUEST['id'], $_REQUEST['movie'] ?? null, $templating, $router);
+        $controller = new \App\Controller\SystemController();
+        $view = $controller->findAction($_REQUEST['room'], $_REQUEST['worker'], $templating, $router);
         break;
-    case 'movie-show':
-        if (! $_REQUEST['id']) {
-            break;
-        }
-        $controller = new \App\Controller\MovieController();
-        $view = $controller->showAction($_REQUEST['id'], $templating, $router);
-        break;
-    case 'movie-delete':
-        if (! $_REQUEST['id']) {
-            break;
-        }
-        $controller = new \App\Controller\MovieController();
-        $view = $controller->deleteAction($_REQUEST['id'], $router);
-        break;
+    
+    // case 'movie-show':
+    //     if (! $_REQUEST['id']) {
+    //         break;
+    //     }
+    //     $controller = new \App\Controller\MovieController();
+    //     $view = $controller->showAction($_REQUEST['id'], $templating, $router);
+    //     break;
+    // case 'movie-delete':
+    //     if (! $_REQUEST['id']) {
+    //         break;
+    //     }
+    //     $controller = new \App\Controller\MovieController();
+    //     $view = $controller->deleteAction($_REQUEST['id'], $router);
+    //     break;
     default:
         $view = 'Not found';
         break;
