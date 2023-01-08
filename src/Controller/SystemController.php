@@ -12,7 +12,11 @@ class SystemController
 {
     public function indexAction(Templating $templating, Router $router): ?string
     {
-       return '';
+        $html = $templating->render('base.html.php', [
+            // 'posts' => $posts,
+            // 'router' => $router,
+        ]);
+        return $html;
     }
 
     public function showAction(Templating $templating, Router $router): ?string
