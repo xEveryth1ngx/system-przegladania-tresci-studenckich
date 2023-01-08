@@ -1,16 +1,28 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
+
+    <title>ZUT</title>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/assets/dist/style.min.css">
-    <title><?= $title ?? 'Custom Framework' ?></title>
 </head>
-<body <?= isset($bodyClass) ? "class='$bodyClass'" : '' ?>>
-    <nav><?php require(__DIR__ . DIRECTORY_SEPARATOR . 'nav.html.php') ?></nav>
-    <main><?= $main ?? null ?></main>
-    <footer>&copy;<?= date('Y') ?> Custom Framework</footer>
+<body>
+    <div class="nav">
+        <img src="/assets/images/zutlogo.jpg">
+        <a href="">Sekcja Plan</a>
+        <a href="">Sekcja Szukaj</a>
+    </div>
+
+    <div class="main">
+        <div class="plan">
+            <div class="date">data</div>
+            <div class="lessonBox">
+                <div class="time">8:15-9:45</div>
+                <div class="lesson">Nazwa przedmiotu (L)</div>
+            </div>
+        </div>
+
+       
+    </div>
 </body>
 </html>

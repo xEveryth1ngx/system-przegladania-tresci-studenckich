@@ -1,0 +1,81 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav{
+    width: 100%;
+    border-bottom: 5px solid #008148;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav img{
+    height: 100px;
+    width: auto;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.nav a{
+    font-size: 36px;
+    margin: 0 auto;
+    text-decoration: underline;
+    text-decoration-color: #008148;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 10px;
+    color: #333a88;
+    padding: 35px;
+}
+
+.main{
+    height: 750px;
+    padding: 30px;
+}
+
+.plan{
+    border: 1px solid rgba(146, 146, 146, 0.466);
+    width: 400px;
+    height: 100%;
+    float: left;
+}
+
+.date{
+    color: #333a88;
+    font-size: 36px;
+    border-bottom: 1px solid rgba(146, 146, 146, 0.466);
+    padding: 15px;
+    text-align: center;
+}
+
+.lessonBox{
+    background-color: #008148;
+    height: 100px;
+    width: 380px;
+    margin: 10px auto;
+    border-radius: 13px;
+}
+
+.time{
+    color: white;
+    font-size: 24px;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+.lesson{
+    color: white;
+    font-size: 32px;
+    padding-left: 20px;
+}
+
+
+
+select{
+    color:#333a88;
+    font-size: 36px;
+    padding: 5px;
+    text-align: center;
+    border: none;
+}
+
