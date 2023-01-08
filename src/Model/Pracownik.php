@@ -3,7 +3,7 @@ namespace App\Model;
 
 use App\Service\Config;
 
-class Movie
+class Pracownik
 {
     private ?int $id = null;
     private ?string $imie = null;
