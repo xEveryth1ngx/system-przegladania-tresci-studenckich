@@ -159,9 +159,8 @@ class Budynek
         ]);
 
         $this->setId(null);
-        $this->setImie(null);
-        $this->setNazwisko(null);
-        $this->setStopien(null);
+        $this->setNazwa(null);
+        $this->setAdres(null);
     }
 
 
