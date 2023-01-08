@@ -125,7 +125,7 @@ class Pracownik
         return $Pracownicy;
     }
 
-    public static function find($id): ?Movie
+    public static function find($id): ?self
     {
         $pdo = new \PDO(Config::get('db_dsn'), Config::get('db_user'), Config::get('db_pass'));
         $sql = 'SELECT * FROM pracownik WHERE id = :id';
@@ -136,7 +136,7 @@ class Pracownik
         if (! $PracownikArray) {
             return null;
         }
-        $Pracownik = Movie::fromArray($PracownikArray);
+        $Pracownik = Pracownik::fromArray($PracownikArray);
 
         return $Pracownik;
     }
