@@ -12,6 +12,8 @@ switch ($action) {
     case null:
         $controller = new \App\Controller\SystemController();
         $view = $controller->indexAction($templating, $router);
+        // $controller2 = new \App\Controller\PlanController();
+        // $controller2->showPlanByPokoj(313, $templating, $router);
         break;
     case 'donde-plan':
         $controller = new \App\Controller\SystemController();
