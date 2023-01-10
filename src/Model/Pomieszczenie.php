@@ -64,39 +64,43 @@ class Pomieszczenie
     public static function find($id): ?self
     {
         $pdo = new \PDO(Config::get('db_dsn'), Config::get('db_user'), Config::get('db_pass'));
-        $sql = 'SELECT * FROM pracownik WHERE id = :id';
+        $sql = 'SELECT * FROM pomieszczenie WHERE id = :id';
         $statement = $pdo->prepare($sql);
         $statement->execute(['id' => $id]);
 
-        $PracownikArray = $statement->fetch(\PDO::FETCH_ASSOC);
-        if (! $PracownikArray) {
+        $PomieszczenieArray = $statement->fetch(\PDO::FETCH_ASSOC);
+        if (! $PomieszczenieArray) {
             return null;
         }
-        $Pracownik = Pracownik::fromArray($PracownikArray);
+        $Pomieszczenie = Pracownik::fromArray($PomieszczenieArray);
 
-        return $Pracownik;
+        return $Pomieszczenie;
     }
 
     public function save(): void
     {
         $pdo = new \PDO(Config::get('db_dsn'), Config::get('db_user'), Config::get('db_pass'));
         if (! $this->getId()) {
-            $sql = "INSERT INTO pracownik (imie, nazwisko, stopien) VALUES (:imie, :nazwisko, :stopien)";
+            $sql = "INSERT INTO pomieszczenie (numer, rodzaj, godziny_dostepnosci, pracownik_id, pietro_id) VALUES (:numer, :rodzaj, :godziny_dostepnosci, :pracownik_id, :pietro_id)";
             $statement = $pdo->prepare($sql);
             $statement->execute([
-                'imie' => $this->getImie(),
-                'nazwisko' => $this->getNazwisko(),
-                'stopien' => $this->getStopien(),
+                'numer' => $this->getNumer(),
+                'rodzaj' => $this->getRodzaj(),
+                'godziny_dostepnosci' => $this->getGodzinyDostepnosci(),
+                'pracownik_id' => $this->getPracownikId(),
+                'pietro_id' => $this->getPietroId(),
             ]);
 
             $this->setId($pdo->lastInsertId());
         } else {
-            $sql = "UPDATE pracownik SET imie = :imie, nazwisko = :nazwisko, stopien = :stopien WHERE id = :id";
+            $sql = "UPDATE pomieszczenie SET numer = :numer, rodzaj = :rodzaj, godziny_dostepnosci = :godziny_dostepnosci, pracownik_id = :pracownik_id, pietro_id = :pietro_id WHERE id = :id";
             $statement = $pdo->prepare($sql);
             $statement->execute([
-                ':imie' => $this->getImie(),
-                ':nazwisko' => $this->getNazwisko(),
-                ':stopien' => $this->getStopien(),
+                ':numer' => $this->getNumer(),
+                ':rodzaj' => $this->getRodzaj(),
+                ':godziny_dostepnosci' => $this->getGodzinyDostepnosci(),
+                ':pracownik_id' => $this->getPracownikId(),
+                ':pietro_id' => $this->getPietroId(),
                 ':id' => $this->getId(),
             ]);
         }
@@ -105,16 +109,18 @@ class Pomieszczenie
     public function delete(): void
     {
         $pdo = new \PDO(Config::get('db_dsn'), Config::get('db_user'), Config::get('db_pass'));
-        $sql = "DELETE FROM pracownik WHERE id = :id";
+        $sql = "DELETE FROM pomieszczenie WHERE id = :id";
         $statement = $pdo->prepare($sql);
         $statement->execute([
             ':id' => $this->getId(),
         ]);
 
+        $this->setNumer(null);
+        $this->setRodzaj(null);
+        $this->setGodzinyDostepnosci(null);
+        $this->setPracownikId(null);
+        $this->setPietroId(null);
         $this->setId(null);
-        $this->setImie(null);
-        $this->setNazwisko(null);
-        $this->setStopien(null);
     }
 
     /**
