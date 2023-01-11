@@ -12,9 +12,9 @@ class SystemController
 {
     public function indexAction(Templating $templating, Router $router): ?string
     {
-        $html = $templating->render('base.html.php', [
+        $html = $templating->render('system/plan.html.php', [
             // 'posts' => $posts,
-            // 'router' => $router,
+            'router' => $router,
         ]);
         return $html;
     }
