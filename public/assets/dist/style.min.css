@@ -31,11 +31,13 @@ body{
 .main{
     height: 750px;
     padding: 30px;
+    width: 97%;
+   
 }
 
 .plan{
     border: 1px solid rgba(146, 146, 146, 0.466);
-    width: 400px;
+    width: 20%;
     height: 100%;
     float: left;
 }
@@ -51,7 +53,7 @@ body{
 .lessonBox{
     background-color: #008148;
     height: 100px;
-    width: 380px;
+    width: 19vw;
     margin: 10px auto;
     border-radius: 13px;
 }
@@ -69,7 +71,12 @@ body{
     padding-left: 20px;
 }
 
-
+.right{
+    float: left;
+    padding-left: 150px;
+    width: 60vw;
+    text-align: center;
+}
 
 select{
     color:#333a88;
@@ -79,3 +86,20 @@ select{
     border: none;
 }
 
+.map{
+    background-color: grey;
+    width: 60vw;
+    height: 450px;
+}
+
+.info{
+    border: 1px solid rgba(146, 146, 146, 0.466);
+    font-size: 36px;
+    padding: 10px;
+    margin-top: 15px;
+    text-align: left;
+}
+
+.info a{
+    color: #2B7DAB;
+}
