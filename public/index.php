@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ERROR | E_PARSE);
 require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'autoload.php';
 
 $config = new \App\Service\Config();
@@ -10,10 +11,10 @@ $action = $_REQUEST['action'] ?? null;
 switch ($action) {
     case 'donde-plan':
     case null:
-        $controller = new \App\Controller\SystemController();
-        $view = $controller->indexAction($templating, $router);
-        // $controller2 = new \App\Controller\PlanController();
-        // $controller2->showPlanByPokoj(313, $templating, $router);
+        // $controller = new \App\Controller\SystemController();
+        // $view = $controller->indexAction($templating, $router);
+        $controller2 = new \App\Controller\PlanController();
+        $view = $controller2->showPlanByPokoj($_REQUEST['numer'] ? $_REQUEST['numer'] : null, $templating, $router);
         break;
     case 'donde-szukaj':
         if (! ($_REQUEST['room'] || $_REQUEST['worker'])) {

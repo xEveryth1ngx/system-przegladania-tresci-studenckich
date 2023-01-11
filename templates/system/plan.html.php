@@ -1,12 +1,23 @@
 <?php
+/** @var array $zajecia */
+/** @var \App\Service\Router $router */
 
 ob_start(); ?>
     <div class="plan">
         <div class="date">data</div>
-        <div class="lessonBox">
+        <!-- <div class="lessonBox">
             <div class="time">8:15-9:45</div>
             <div class="lesson">Nazwa przedmiotu (L)</div>
+        </div> -->
+    <?php if (isset($zajecia)) { ?>
+    <?php foreach ($zajecia as $zajecie): ?>
+        <div class="lessonBox">
+            <div class="time"><?= $zajecie['start'] . '-' .$zajecie['end'] ?></div>
+            <div class="lesson"><?= $zajecie['title'] ?></div>
         </div>
+    <?php endforeach ?>
+    <?php } ?>
+
     </div>
 
     <div class="right">
