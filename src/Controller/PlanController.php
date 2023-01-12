@@ -3,9 +3,12 @@
 namespace App\Controller;
 use App\Service\Router;
 use App\Service\Templating;
+use App\Service\Config;
+use App\Model\Pracownik;
+
 class PlanController 
 {
-    public function showPlanByPokoj(?int $numer, Templating $templating, Router $router)
+    public function showPlanByPokoj(?int $budynek, ?int $numer, Templating $templating, Router $router)
     {
         // TODO: DODAC WYBOR BUDYNKU
         if ($numer === null) {
@@ -23,7 +26,7 @@ class PlanController
         // $currentTime = "08:16:00";
         // echo $numer . '<br>';
         // https://plan.zut.edu.pl/schedule_student.php?room=WI+WI1-+013&start=2023-01-09T00:00:00+01:00&end=2023-01-10T00:00:00+01:00
-        $url = "https://plan.zut.edu.pl/schedule_student.php?room=WI+WI1-+{$numer}&start={$today}&end={$tomorrow}";
+        $url = "https://plan.zut.edu.pl/schedule_student.php?room=WI+WI{$budynek}-+{$numer}&start={$today}&end={$tomorrow}";
         
         // zapytanie http
         $plan = file_get_contents($url, true);
@@ -48,10 +51,16 @@ class PlanController
             }
         }
 
+        // TODO: ZABEZPIECZENIE JEZELI NIE MA BUDYNKU LUB NUMERU
+        $pracownicy = Pracownik::getData($budynek, $numer);
+
         $html = $templating->render('system/plan.html.php', [
             'router' => $router,
             'zajecia' => $zajecia,
+            'pracownicy' => $pracownicy,
         ]);
         return $html;
     }
+
+    
 }
