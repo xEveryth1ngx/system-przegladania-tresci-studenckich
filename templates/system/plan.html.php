@@ -1,6 +1,8 @@
 <?php
 /** @var array $zajecia */
 /** @var \App\Service\Router $router */
+/** @var \App\Controller\Pracownik[] $pracownik */
+
 
 ob_start(); ?>
     <div class="plan">
@@ -42,11 +44,12 @@ ob_start(); ?>
             </svg>
 
         </div>
+        <!-- TODO: TU RENDEROWAC TO FOREACH -->
         <div class="info">
             Link do planu zajęć: <a href="">Plan.com</a><br>
-            Tytuł:<br>
-            Imię:<br>
-            Nazwisko:<br>
+            Tytuł: <?= $pracownicy[0]->getStopien() ?><br>
+            Imię: <?= $pracownicy[0]->getImie() ?><br>
+            Nazwisko: <?= $pracownicy[0]->getNazwisko() ?><br>
             Gdzie może przebywać:
         </div>
     </div>
