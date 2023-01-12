@@ -17,11 +17,11 @@ switch ($action) {
         $view = $controller2->showPlanByPokoj($_REQUEST['numer'] ? $_REQUEST['numer'] : null, $templating, $router);
         break;
     case 'donde-szukaj':
-        if (! ($_REQUEST['room'] || $_REQUEST['worker'])) {
-            break;
-        }
-        $controller = new \App\Controller\SystemController();
-        $view = $controller->findAction($_REQUEST['room'], $_REQUEST['worker'], $templating, $router);
+        // if (! ($_REQUEST['room'] || $_REQUEST['worker'])) {
+        //     break;
+        // }
+        $controller = new \App\Controller\SzukajController();
+        $view = $controller->indexSzukaj($templating, $router);
         break;
     
     // case 'movie-show':

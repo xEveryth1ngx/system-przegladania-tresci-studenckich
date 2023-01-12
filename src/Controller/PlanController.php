@@ -7,6 +7,7 @@ class PlanController
 {
     public function showPlanByPokoj(?int $numer, Templating $templating, Router $router)
     {
+        // TODO: DODAC WYBOR BUDYNKU
         if ($numer === null) {
             $html = $templating->render('system/plan.html.php', [
                 'router' => $router,
