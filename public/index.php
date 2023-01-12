@@ -14,7 +14,7 @@ switch ($action) {
         // $controller = new \App\Controller\SystemController();
         // $view = $controller->indexAction($templating, $router);
         $controller2 = new \App\Controller\PlanController();
-        $view = $controller2->showPlanByPokoj($_REQUEST['numer'] ? $_REQUEST['numer'] : null, $templating, $router);
+        $view = $controller2->showPlanByPokoj($_REQUEST['budynek'] ? $_REQUEST['budynek'] : null, $_REQUEST['numer'] ? $_REQUEST['numer'] : null, $templating, $router);
         break;
     case 'donde-szukaj':
         // if (! ($_REQUEST['room'] || $_REQUEST['worker'])) {
