@@ -180,4 +180,25 @@ class Pracownik
         $this->setNazwisko(null);
         $this->setStopien(null);
     }
+
+    public static function getData(int $budynek, int $numer) {
+        $pdo = new \PDO(Config::get('db_dsn'), Config::get('db_user'), Config::get('db_pass'));
+        $sql = 
+        "SELECT *
+        FROM pracownik
+        JOIN pomieszczenie ON pracownik.id=pomieszczenie.pracownik_id 
+        JOIN pietro ON pomieszczenie.pietro_id=pietro.id
+        JOIN budynek ON pietro.budynek_id=budynek.id
+        WHERE budynek.id={$budynek} AND pomieszczenie.numer={$numer};";
+
+        $statement = $pdo->prepare($sql);
+        $statement->execute();
+        $Pracownicy = [];
+        $PracownicyArray = $statement->fetchAll(\PDO::FETCH_ASSOC);
+        foreach ($PracownicyArray as $PracownikArray) {
+            $Pracownicy[] = self::fromArray($PracownikArray);
+        }
+        // TODO: TU ZABEZPIECZYC IDK CO JESZCZE
+        return $Pracownicy;
+    }
 }

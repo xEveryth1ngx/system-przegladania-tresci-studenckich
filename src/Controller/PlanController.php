@@ -3,6 +3,9 @@
 namespace App\Controller;
 use App\Service\Router;
 use App\Service\Templating;
+use App\Service\Config;
+use App\Model\Pracownik;
+
 class PlanController 
 {
     public function showPlanByPokoj(?int $budynek, ?int $numer, Templating $templating, Router $router)
@@ -48,10 +51,16 @@ class PlanController
             }
         }
 
+        // TODO: ZABEZPIECZENIE JEZELI NIE MA BUDYNKU LUB NUMERU
+        $pracownicy = Pracownik::getData($budynek, $numer);
+
         $html = $templating->render('system/plan.html.php', [
             'router' => $router,
             'zajecia' => $zajecia,
+            'pracownicy' => $pracownicy,
         ]);
         return $html;
     }
+
+    
 }
