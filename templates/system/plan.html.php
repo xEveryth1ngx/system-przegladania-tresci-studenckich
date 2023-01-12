@@ -51,8 +51,7 @@ ob_start(); ?>
         </div>
     </div>
 
-    <script type="text/javascript" src="../../public/plan.js">
-    </script>
+    <script type="text/javascript" src="../../public/plan.js"></script>
 <?php $main = ob_get_clean();
 
 include __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'base.html.php';
