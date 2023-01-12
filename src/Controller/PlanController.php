@@ -52,7 +52,12 @@ class PlanController
         }
 
         // TODO: ZABEZPIECZENIE JEZELI NIE MA BUDYNKU LUB NUMERU
-        $pracownicy = Pracownik::getData($budynek, $numer);
+        if(isset($budynek) && isset($numer)){
+            $pracownicy = Pracownik::getData($budynek, $numer);
+        }
+        else{
+            $pracownicy = null;
+        }
 
         $html = $templating->render('system/plan.html.php', [
             'router' => $router,

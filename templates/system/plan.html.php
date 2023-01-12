@@ -46,13 +46,15 @@ ob_start(); ?>
 
         </div>
         <!-- TODO: TU RENDEROWAC TO FOREACH -->
+        <?php foreach($pracownicy as $pracownik): ?>
         <div class="info">
             Link do planu zajęć: <a href="">Plan.com</a><br>
-            Tytuł: <?= $pracownicy[0]->getStopien() ?><br>
-            Imię: <?= $pracownicy[0]->getImie() ?><br>
-            Nazwisko: <?= $pracownicy[0]->getNazwisko() ?><br>
+            Tytuł: <?= $pracownik->getStopien() ?><br>
+            Imię: <?= $pracownik->getImie() ?><br>
+            Nazwisko: <?= $pracownik->getNazwisko() ?><br>
             Gdzie może przebywać:
         </div>
+        <?php endforeach ?>
     </div>
 
     <script type="text/javascript" src="/assets/dist/plan.js"></script>
