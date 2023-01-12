@@ -21,7 +21,7 @@ ob_start(); ?>
     </div>
 
     <div class="right">
-        <select name="building" id="building-select" onchange="changeImage(this);">
+        <select name="building" id="buildingselect" onchange="chngimg()">
 
             <option selected value="WI1PP">WI1 piwnica</option>
             <option value="WI1P0">WI1 piętro 0</option>
@@ -38,7 +38,8 @@ ob_start(); ?>
         </select>
         <div class="map">
             <svg height="450" width="60vw">
-                <image href="/assets/images/WI1P1.svg" height="450" width="100%" id="floor"/>
+                <image href="/assets/images/WI1PP.svg" height="450" width="100%" id="WI1PP"/>
+                <image href="/assets/images/WI1P1.svg" height="450" width="100%" id="WI1P1"/>
             </svg>
 
         </div>
@@ -51,7 +52,7 @@ ob_start(); ?>
         </div>
     </div>
 
-    <script type="text/javascript" src="../../public/plan.js"></script>
+    <script type="text/javascript" src="/assets/dist/plan.js"></script>
 <?php $main = ob_get_clean();
 
 include __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'base.html.php';

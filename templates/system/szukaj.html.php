@@ -1,6 +1,7 @@
 <?php
 
 ob_start(); ?>
+
 <select name="search" id="search-select">
 <option selected value="pracownik">Pracownik</option>
 <option value="pomieszczenie">Pomieszczenie</option>
@@ -52,7 +53,7 @@ ob_start(); ?>
         <input type="submit" value="Submit">
     </form>
 
-    <script type="text/javascript" src="../../public/szukaj.js"></script>
+    <script type="text/javascript" src="/assets/dist/szukaj.js"></script>
 <?php $main = ob_get_clean();
 
 include __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'base.html.php';
