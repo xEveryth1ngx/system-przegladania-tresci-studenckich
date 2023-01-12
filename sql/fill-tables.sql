@@ -1,14 +1,14 @@
-INSERT INTO pracownik (`imie`,`nazwisko`,`stopien`) VALUES ('Artur','Karczmarczyk','dr inż.');
-INSERT INTO pracownik (`imie`,`nazwisko`,`stopien`) VALUES ('Krzysztof','Makle','dr inż.');
-INSERT INTO pracownik (`imie`,`nazwisko`,`stopien`) VALUES ('Małgorzata','Machowska-Szewczyk','dr');
-INSERT INTO pracownik (`imie`,`nazwisko`,`stopien`) VALUES ('Aneta','Bera','dr inż.');
-INSERT INTO pracownik (`imie`,`nazwisko`,`stopien`) VALUES ('Marek','Wernikowski','dr inż.');
-INSERT INTO pracownik (`imie`,`nazwisko`,`stopien`) VALUES ('Imed','El Fray','dr hab.inż.');
+INSERT INTO pracownik (`imie`,`nazwisko`,`stopien`) VALUES ('Artur','Karczmarczyk','dr inz.');
+INSERT INTO pracownik (`imie`,`nazwisko`,`stopien`) VALUES ('Krzysztof','Makle','dr inz.');
+INSERT INTO pracownik (`imie`,`nazwisko`,`stopien`) VALUES ('Malgorzata','Machowska-Szewczyk','dr');
+INSERT INTO pracownik (`imie`,`nazwisko`,`stopien`) VALUES ('Aneta','Bera','dr inz.');
+INSERT INTO pracownik (`imie`,`nazwisko`,`stopien`) VALUES ('Marek','Wernikowski','dr inz.');
+INSERT INTO pracownik (`imie`,`nazwisko`,`stopien`) VALUES ('Imed','El Fray','dr hab.inz.');
 
 
 
 INSERT INTO pomieszczenie (`numer`,`rodzaj`,`godziny_dostepnosci`,`pracownik_id`,`pietro_id`) 
-VALUES ('128','wykładowa','8:15-10:00','4','1');
+VALUES ('128','wykladowa','8:15-10:00','4','1');
 INSERT INTO pomieszczenie (`numer`,`rodzaj`,`godziny_dostepnosci`,`pracownik_id`,`pietro_id`) 
 VALUES ('100','audytoryjna','12:15-14:00','1','1');
 INSERT INTO pomieszczenie (`numer`,`rodzaj`,`godziny_dostepnosci`,`pracownik_id`,`pietro_id`) 
@@ -27,6 +27,6 @@ INSERT INTO pietro (`id`,`numer`,`budynek_id`) VALUES ('6','2','2');
 INSERT INTO pietro (`id`,`numer`,`budynek_id`) VALUES ('7','3','2');
 
 
-INSERT INTO budynek (`id`,`nazwa`,`adres`) VALUES ('1','WI-ZUT-1','ul. Żołnierska 49, 71-210 Szczecin');
-INSERT INTO budynek (`id`,`nazwa`,`adres`) VALUES ('2','WI-ZUT-2','ul. Żołnierska 52, 71-210 Szczecin');
+INSERT INTO budynek (`id`,`nazwa`,`adres`) VALUES ('1','WI-ZUT-1','ul. Zolnierska 49, 71-210 Szczecin');
+INSERT INTO budynek (`id`,`nazwa`,`adres`) VALUES ('2','WI-ZUT-2','ul. Zolnierska 52, 71-210 Szczecin');
 
