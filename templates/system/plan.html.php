@@ -52,7 +52,6 @@ ob_start(); ?>
             Tytuł: <?= $pracownik->getStopien() ?><br>
             Imię: <?= $pracownik->getImie() ?><br>
             Nazwisko: <?= $pracownik->getNazwisko() ?><br>
-            Gdzie może przebywać:
         </div>
         <?php endforeach ?>
     </div>
