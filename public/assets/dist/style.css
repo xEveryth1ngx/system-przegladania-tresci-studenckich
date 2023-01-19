@@ -128,3 +128,11 @@ select{
     border-width: 1px;
     border-color: gray;
 }
+
+#login_form{
+    display: none;
+}
+
+.loginDiv{
+    text-align: center;
+}
