@@ -10,32 +10,38 @@ ob_start(); ?>
         <option value="pomieszczenie">Pomieszczenie</option>
     </select>
 
-    <form action="" id="pracownik_form">
-        <label for="date">Data:</label>
-        <input type="date" id="date" name="date"><br>
+    <form action="<?= $router->generatePath('donde-szukaj') ?>", method="post", id="pracownik_form">
 
-        <label for="time">Godzina:</label>
-        <input type="" id="time" name="time"><br>
+        <input type="hidden" id="" name="typ" value="pracownik"><br>
 
-        <label for="fname">Imię:</label>
-        <input type="text" id="fname" name="fname"><br>
+        <label for="data">Data:</label>
+        <input type="date" id="date" name="data"><br>
 
-        <label for="lname">Nazwisko:</label>
-        <input type="text" id="lname" name="lname"><br>
+        <label for="godzina">Godzina:</label>
+        <input type="text" id="time" name="godzina"><br>
+
+        <label for="p1">Imię:</label>
+        <input type="text" id="fname" name="p1"><br>
+
+        <label for="p2">Nazwisko:</label>
+        <input type="text" id="lname" name="p2"><br>
 
         <input type="submit" value="Submit">
     </form>
 
-    <form action="" id="pomieszczenie_form">
-        <label for="date">Data:</label>
-        <input type="date" id="date" name="date"><br>
+    <form action="<?= $router->generatePath('donde-szukaj') ?>", method="post" id="pomieszczenie_form">
 
-        <label for="time">Godzina:</label>
-        <input type="" id="time" name="time"><br>
+        <input type="hidden" id="" name="typ" value="pomieszczenie"><br>
+
+        <label for="data">Data:</label>
+        <input type="date" id="date" name="data"><br>
+
+        <label for="godzina">Godzina:</label>
+        <input type="text" id="time" name="godzina"><br>
 
         <label for="building">Budynek:</label>
 
-        <select class="formSelect" name="building" id="building-select">
+        <select class="formSelect" name="p1" id="building-select">
 
             <option selected value="WI1PP">WI1 piwnica</option>
             <option value="WI1P0">WI1 piętro 0</option>
@@ -51,8 +57,8 @@ ob_start(); ?>
 
         </select><br>
 
-        <label for="room_number">Numer pomieszczenia:</label>
-        <input type="text" id="room_number" name="room_number"><br>
+        <label for="p2">Numer pomieszczenia:</label>
+        <input type="text" id="room_number" name="p2"><br>
 
         <input type="submit" value="Submit">
     </form>

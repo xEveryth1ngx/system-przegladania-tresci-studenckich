@@ -21,7 +21,11 @@ switch ($action) {
         //     break;
         // }
         $controller = new \App\Controller\SzukajController();
-        $view = $controller->indexSzukaj($templating, $router);
+       // $view = $controller->indexSzukaj($templating, $router);
+        $view = $controller->indexSzukaj($_REQUEST['typ'] ? $_REQUEST['typ'] : null, $_REQUEST['data'] ? $_REQUEST['data'] : null,
+         $_REQUEST['godzina'] ? $_REQUEST['godzina'] : null,
+         $_REQUEST['p1'] ? $_REQUEST['p1'] : null,
+         $_REQUEST['p2'] ? $_REQUEST['p2'] : null, $templating, $router);
         break;
     
     // case 'movie-show':
