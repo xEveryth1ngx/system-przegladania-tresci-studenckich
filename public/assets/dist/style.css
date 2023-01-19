@@ -103,3 +103,28 @@ select{
 .info a{
     color: #2B7DAB;
 }
+
+#pracownik_form{
+    display: block;
+}
+
+#pomieszczenie_form{
+    display: none;
+}
+
+
+
+.formBox{
+    text-align: center;
+   
+}
+
+.formSelect{
+    color: black;
+    font-size: 14px;
+    padding: 2px;
+    text-align: center;
+    border: solid;
+    border-width: 1px;
+    border-color: gray;
+}
