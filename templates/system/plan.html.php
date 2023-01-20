@@ -44,7 +44,7 @@ ob_start(); ?>
             <image href="/assets/images/WI1PP.svg" height="450" width="100%" id="WI1PP" />
             <image href="/assets/images/WI1P1.svg" height="450" width="100%" id="WI1P1" />
             <a href="<?= $router->generatePath('donde-plan', ['budynek' => '1', 'numer' => '128']) ?>">
-                <rect x="50" y="100" width="50" height="100" style="fill:blue;stroke:pink;stroke-width:5;fill-opacity:0.1;stroke-opacity:0.9;"/>
+                <rect x="58" y="105" width="42" height="94" class="kwadrat"/>
             </a>
         </svg>
 

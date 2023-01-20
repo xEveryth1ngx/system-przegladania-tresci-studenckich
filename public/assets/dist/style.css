@@ -136,3 +136,13 @@ select{
 .loginDiv{
     text-align: center;
 }
+
+.kwadrat{
+    fill:red;
+    fill-opacity:0.0;
+}
+
+.kwadrat:hover{
+    fill:yellow;
+    fill-opacity:0.1;
+}
