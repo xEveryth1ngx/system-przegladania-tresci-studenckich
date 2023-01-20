@@ -102,14 +102,13 @@ ob_start(); ?>
         <svg height="450" width="60vw">
             <image href="/assets/images/WI1PP.svg" height="450" width="100%" id="WI1PP" />
             <image href="/assets/images/WI1P1.svg" height="450" width="100%" id="WI1P1" />
-            <rect x="50" y="100" width="50" height="100" onclick="alert('Dziala.')" style="fill:blue;stroke:pink;stroke-width:5;fill-opacity:0.1;stroke-opacity:0.9" />
         </svg>
 
     </div>
     <!-- TODO: TU RENDEROWAC TO FOREACH -->
     <?php foreach ($pracownicy as $pracownik) : ?>
         <div class="info">
-            Link do planu zajęć: <a href="">Plan.com</a><br>
+            Link do planu zajęć: <a href="https://plan.zut.edu.pl/">Plan</a><br>
             Tytuł: <?= $pracownik->getStopien() ?><br>
             Imię: <?= $pracownik->getImie() ?><br>
             Nazwisko: <?= $pracownik->getNazwisko() ?><br>

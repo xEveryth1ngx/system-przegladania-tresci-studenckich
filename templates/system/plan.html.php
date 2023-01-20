@@ -50,7 +50,7 @@ ob_start(); ?>
     <!-- TODO: TU RENDEROWAC TO FOREACH -->
     <?php foreach ($pracownicy as $pracownik) : ?>
         <div class="info">
-            Link do planu zajęć: <a href="">Plan.com</a><br>
+            Link do planu zajęć: <a href="https://plan.zut.edu.pl/">Plan</a><br>
             Tytuł: <?= $pracownik->getStopien() ?><br>
             Imię: <?= $pracownik->getImie() ?><br>
             Nazwisko: <?= $pracownik->getNazwisko() ?><br>
